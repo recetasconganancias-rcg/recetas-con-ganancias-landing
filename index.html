@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas con Ganancias | Cocina como Chef y Ahorra Dinero</title>
+    <meta name="description" content="Aprende a cocinar platos de restaurante en casa, ahorra dinero y sorprende a tu familia. Curso online de cocina internacional fácil y rentable.">
+    <meta name="keywords" content="recetas internacionales fáciles, curso de cocina online, ahorrar dinero comida, recetas rentables, cocina para principiantes">
+    <meta name="author" content="Recetas con Ganancias">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="De 'No sé qué cocinar' a Chef en Casa">
+    <meta property="og:description" content="Descubre cómo transformar tus cenas y tu economía con nuestro método de cocina práctica.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#e85d04',   /* Naranja Apetitoso */
+                            terra: '#9d0208',    /* Terracota */
+                            cream: '#fff1e6',    /* Crema suave */
+                            dark: '#1f1f1f'      /* Texto oscuro */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilos personalizados para efectos visuales */
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.6));
+        }
+        .food-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-dark bg-gray-50 antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i data-lucide="chef-hat" class="h-8 w-8 text-brand-orange"></i>
+                    <span class="font-serif text-2xl font-bold text-gray-900">Recetas con Ganancias</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#beneficios" class="text-gray-600 hover:text-brand-orange transition">Beneficios</a>
+                    <a href="#testimonios" class="text-gray-600 hover:text-brand-orange transition">Testimonios</a>
+                    
+                    <!-- Social Icons -->
+                    <div class="flex space-x-4 border-l pl-6 border-gray-200">
+                        <a href="https://www.tiktok.com/@recetas.con.ganancias?_r=1&_t=ZS-91csvaLWhkd" target="_blank" class="text-gray-500 hover:text-black transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v10.1c-.05 2.31-1.39 4.46-3.48 5.6-2.09 1.14-4.63 1.14-6.71 0-2.09-1.14-3.43-3.29-3.48-5.6-.05-2.28 1.25-4.41 3.33-5.58 2.08-1.17 4.63-1.16 6.72.01v4.27c-1.14-.68-2.58-.68-3.72.01-.63.38-1.02 1.05-1.02 1.79 0 .74.39 1.41 1.03 1.79 1.15.68 2.6.68 3.75-.01.63-.38 1.02-1.05 1.02-1.79V.02z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/recetas_con_ganancias?igsh=bmFhbjl4dnM5eDB2" target="_blank" class="text-gray-500 hover:text-pink-600 transition">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                    
+                    <a href="https://go.hotmart.com/S102479125R?ap=fa4a" class="bg-brand-orange text-white px-6 py-2 rounded-full font-bold hover:bg-brand-terra transition duration-300 shadow-lg animate-pulse">
+                        Empezar Ahora
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#beneficios" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-gray-50">Beneficios</a>
+                <a href="#testimonios" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-gray-50">Testimonios</a>
+                <a href="https://go.hotmart.com/S102479125R?ap=fa4a" class="block w-full text-center mt-4 bg-brand-orange text-white px-4 py-3 rounded-md font-bold">¡Quiero aprender!</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-24 pb-16 md:pt-32 md:pb-32 flex items-center min-h-[90vh]">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1543362906-ac1b452601e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Cena familiar feliz">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="md:w-1/2 text-left">
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-orange/20 text-brand-orange bg-white text-sm font-bold tracking-wide mb-4">
+                        🔥 Oferta Especial de Lanzamiento
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight mb-6 drop-shadow-lg">
+                        Deja de gastar en comida rápida: <br/>
+                        <!-- Eliminado bg-white, mantenido color naranja y cursiva -->
+                        <span class="text-brand-orange italic">Aprende a cocinar</span> platos de restaurante en casa.
+                    </h1>
+                    <p class="text-xl text-gray-200 mb-8 font-light max-w-lg drop-shadow-md">
+                        Conviértete en la chef de tu familia, ahorra dinero y disfruta de cenas inolvidables sin pasar horas en la cocina.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://go.hotmart.com/S102479125R?ap=fa4a" class="flex items-center justify-center gap-2 bg-brand-orange text-white text-lg font-bold px-8 py-4 rounded-lg shadow-xl hover:bg-brand-terra hover:scale-105 transition duration-300">
+                            ¡Quiero aprender a cocinar así!
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#video-demo" class="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/30 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition duration-300">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i>
+                            Ver cómo funciona
+                        </a>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-300 flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i> Garantía de 7 días
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-400 ml-2"></i> Acceso inmediato
+                    </p>
+                </div>
+                
+                <!-- Hero Images Gallery (New) -->
+                <div class="md:w-1/2 hidden md:block relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4 transform translate-y-8">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Ensalada saludable" class="rounded-2xl shadow-2xl border-4 border-white/10 hover:scale-105 transition duration-500 object-cover h-64 w-full">
+                        </div>
+                        <div class="space-y-4">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pizza casera deliciosa" class="rounded-2xl shadow-2xl border-4 border-white/10 hover:scale-105 transition duration-500 object-cover h-48 w-full">
+                            <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tostada gourmet" class="rounded-2xl shadow-2xl border-4 border-white/10 hover:scale-105 transition duration-500 object-cover h-40 w-full">
+                        </div>
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-orange/20 blur-3xl rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROBLEM / SOLUTION SECTION -->
+    <section id="beneficios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-dark mb-4">De "¿No sé qué cocinar?" a Chef en Casa</h2>
+                <div class="w-24 h-1 bg-brand-orange mx-auto"></div>
+                <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+                    ¿Cansada de pedir delivery caro o cocinar siempre lo mismo? Es hora de recuperar el control de tu cocina y tu bolsillo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="bg-brand-cream p-8 rounded-2xl text-center hover:shadow-xl transition duration-300 border border-transparent hover:border-brand-orange/30">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                        <i data-lucide="dollar-sign" class="w-8 h-8 text-brand-orange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ahorro Inteligente</h3>
+                    <p class="text-gray-600">Deja de desperdiciar ingredientes y gastar fortunas en restaurantes. Aprende a comprar y cocinar estratégicamente.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-cream p-8 rounded-2xl text-center hover:shadow-xl transition duration-300 border border-transparent hover:border-brand-orange/30">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                        <i data-lucide="utensils" class="w-8 h-8 text-brand-orange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Variedad Internacional</h3>
+                    <p class="text-gray-600">Sorprende con recetas italianas, mexicanas y asiáticas adaptadas a ingredientes que encuentras en tu mercado local.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-cream p-8 rounded-2xl text-center hover:shadow-xl transition duration-300 border border-transparent hover:border-brand-orange/30">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                        <i data-lucide="users" class="w-8 h-8 text-brand-orange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Comunidad VIP</h3>
+                    <p class="text-gray-600">No estarás sola. Únete a miles de mujeres latinas compartiendo sus resultados, fotos y emprendimientos gastronómicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL BREAK / APPETIZING PHOTOS -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-2">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pizza casera" class="w-full h-48 object-cover hover:opacity-90 transition">
+        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sandwich gourmet" class="w-full h-48 object-cover hover:opacity-90 transition">
+        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pasta fresca" class="w-full h-48 object-cover hover:opacity-90 transition">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Carne asada" class="w-full h-48 object-cover hover:opacity-90 transition">
+    </section>
+
+    <!-- SOCIAL PROOF / TESTIMONIALS -->
+    <section id="testimonios" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-serif font-bold text-center mb-12">Lo que dicen nuestras estudiantes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg relative">
+                    <div class="text-brand-orange text-4xl font-serif absolute top-4 right-4">"</div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Carolina" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Carolina M.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Desde que entré al curso, he reducido mi gasto en supermercado un 30% porque ya no compro comida procesada. ¡Mi familia ama mis nuevos platos!"</p>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg relative">
+                    <div class="text-brand-orange text-4xl font-serif absolute top-4 right-4">"</div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Valeria" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Valeria S.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Empecé aprendiendo para mi casa, y ahora vendo cenas los fines de semana a mis vecinos. ¡Recuperé la inversión del curso en una semana!"</p>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg relative">
+                    <div class="text-brand-orange text-4xl font-serif absolute top-4 right-4">"</div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Andrea" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Andrea R.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Las recetas son súper fáciles de seguir, incluso para alguien como yo que quemaba hasta el agua. Los videos paso a paso son excelentes."</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                 <!-- Usamos Link 2 para variar la oferta si el usuario ya scrolleó hasta aquí -->
+                <a href="https://go.hotmart.com/S102479125R?ap=0c72" class="inline-block bg-brand-terra text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition hover:-translate-y-1">
+                    Ver historias de éxito y unirse
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGENCY & OFFER SECTION -->
+    <section class="py-20 bg-brand-dark text-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-brand-orange rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-brand-terra rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6">¿Lista para cambiar tu cocina hoy?</h2>
+            <p class="text-xl text-gray-300 mb-8">Obtén acceso completo al curso + 3 bonos exclusivos solo por hoy.</p>
+            
+            <div class="bg-white/10 p-8 rounded-2xl backdrop-blur-sm border border-white/10 mb-8 max-w-lg mx-auto">
+                <ul class="text-left space-y-4 mb-8">
+                    <li class="flex items-center"><i data-lucide="check" class="text-brand-orange w-6 h-6 mr-3"></i> +50 Recetas en Video HD</li>
+                    <li class="flex items-center"><i data-lucide="check" class="text-brand-orange w-6 h-6 mr-3"></i> Ebook de Salsas Maestras (Gratis)</li>
+                    <li class="flex items-center"><i data-lucide="check" class="text-brand-orange w-6 h-6 mr-3"></i> Grupo Privado de Soporte</li>
+                    <li class="flex items-center"><i data-lucide="check" class="text-brand-orange w-6 h-6 mr-3"></i> Certificado de Finalización</li>
+                </ul>
+                <div class="text-center">
+                    <p class="text-gray-400 line-through text-lg">Precio Normal: $97 USD</p>
+                    <p class="text-4xl font-bold text-brand-orange mb-6">Hoy: $27 USD</p>
+                    <!-- Link 3: Direct Checkout for high intent -->
+                    <a href="https://go.hotmart.com/O103032695I?dp=1" class="block w-full bg-green-500 hover:bg-green-600 text-white font-bold text-xl py-4 rounded-lg shadow-lg transition transform hover:scale-105">
+                        ¡Inscribirme con 70% Descuento!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & OPT-IN -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            
+            <!-- Opt-in Form -->
+            <div>
+                <h3 class="text-2xl font-serif text-white font-bold mb-4">🎁 Regalo Gratis</h3>
+                <p class="mb-4">Descarga mi Ebook exclusivo <strong>"5 Cenas en 15 Minutos"</strong>. Solo ingresa tu email:</p>
+                
+                <!-- Mailchimp Placeholder Form (Functional Look) -->
+                <!-- NOTA PARA EL USUARIO: Reemplaza este bloque <form> con el código embed de tu Mailchimp -->
+                <form action="#" class="space-y-3">
+                    <input type="email" placeholder="Tu mejor correo electrónico" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-brand-orange transition" required>
+                    <button type="button" onclick="alert('¡Gracias! En un entorno real, esto conectaría con tu Mailchimp y enviaría el PDF.')" class="w-full bg-brand-orange hover:bg-brand-terra text-white font-bold py-3 rounded-lg transition">
+                        ¡Enviar mi Ebook Gratis!
+                    </button>
+                </form>
+                <p class="text-xs text-gray-500 mt-2">Odiamos el spam. Tus datos están 100% seguros.</p>
+            </div>
+
+            <!-- Links & Info -->
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Síguenos en Redes</h3>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="https://www.tiktok.com/@recetas.con.ganancias?_r=1&_t=ZS-91csvaLWhkd" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-brand-orange hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v10.1c-.05 2.31-1.39 4.46-3.48 5.6-2.09 1.14-4.63 1.14-6.71 0-2.09-1.14-3.43-3.29-3.48-5.6-.05-2.28 1.25-4.41 3.33-5.58 2.08-1.17 4.63-1.16 6.72.01v4.27c-1.14-.68-2.58-.68-3.72.01-.63.38-1.02 1.05-1.02 1.79 0 .74.39 1.41 1.03 1.79 1.15.68 2.6.68 3.75-.01.63-.38 1.02-1.05 1.02-1.79V.02z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/recetas_con_ganancias?igsh=bmFhbjl4dnM5eDB2" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-brand-orange hover:text-white transition">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-sm">© 2024 Recetas con Ganancias.</p>
+                    <p class="text-sm text-gray-500 mt-1">Este sitio no es parte de Facebook o Facebook Inc. Este sitio no está respaldado por Facebook de ninguna manera.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para iconos -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
